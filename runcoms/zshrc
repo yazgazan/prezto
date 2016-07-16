@@ -12,4 +12,5 @@ load yazgazan/zsh-rgrep
 load yazgazan/zsh-ctrlp
 load yazgazan/zsh-complete-dots
 load yazgazan/zsh-gi
+load yazgazan/zsh-attach
 
