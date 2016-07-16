@@ -7,6 +7,7 @@ fi
 source "$HOME/.zprezto/aliases.zsh"
 source "$HOME/.zprezto/env.zsh"
 source "$HOME/.zprezto/load.zsh"
+source "$HOME/.zprezto/dirconf.zsh"
 
 load yazgazan/zsh-rgrep
 load yazgazan/zsh-ctrlp
@@ -14,4 +15,5 @@ load yazgazan/zsh-complete-dots
 load yazgazan/zsh-gi
 load yazgazan/zsh-attach
 load yazgazan/zsh-gulp
+load yazgazan/zsh-shortcut
 
