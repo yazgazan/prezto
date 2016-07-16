@@ -14,9 +14,14 @@
 #   http://i.imgur.com/dCwhynn.png
 #
 
+CROSS="✘"
+
 function prompt_kylewest_precmd {
+  RETVAL=$?
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
+  SYMBOLS=""
+  [[ $RETVAL -ne 0 && $RETVAL -ne 146 ]] && SYMBOLS+="%{%F{red}%}$CROSS "
 
   # Get Git repository information.
   if (( $+functions[git-info] )); then
@@ -58,7 +63,7 @@ function prompt_kylewest_setup {
   zstyle ':prezto:module:ruby:info:version' format '%F{blue}[%v]%f'
 
   # Define prompts.
-  PROMPT='%F{cyan}%c%f ${git_info:+${(e)git_info[prompt]}}${editor_info[keymap]} '
+  PROMPT='${SYMBOLS}%F{cyan}%2~%f ${git_info:+${(e)git_info[prompt]}}${editor_info[keymap]} '
   RPROMPT='${ruby_info[version]}'
 }
 
