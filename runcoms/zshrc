@@ -11,4 +11,5 @@ source "$HOME/.zprezto/load.zsh"
 load yazgazan/zsh-rgrep
 load yazgazan/zsh-ctrlp
 load yazgazan/zsh-complete-dots
+load yazgazan/zsh-gi
 
