@@ -1,0 +1,10 @@
+Kowalski=/Users/yazou/pimmr/Kowalski/ios
+Aptenodytes=/Users/yazou/pimmr/Aptenodytes
+EventLogService=/Users/yazou/pimmr/Aptenodytes/EventLogService/backend/src
+Gatekeeper=/Users/yazou/pimmr/Aptenodytes/Gatekeeper/backend/src
+PhotoService=/Users/yazou/pimmr/Aptenodytes/PhotoService/backend/src
+projects=/Users/yazou/projects
+RecommendationService=/Users/yazou/pimmr/Aptenodytes/RecommendationService/backend/src
+ReservationService=/Users/yazou/pimmr/Aptenodytes/ReservationService/backend/src
+UserService=/Users/yazou/pimmr/Aptenodytes/UserService/backend/src
+WebFrontendService=/Users/yazou/pimmr/Aptenodytes/WebFrontendService/backend/src
