@@ -16,4 +16,5 @@ load yazgazan/zsh-gi
 load yazgazan/zsh-attach
 load yazgazan/zsh-gulp
 load yazgazan/zsh-shortcut
+load rupa/z z.sh
 
