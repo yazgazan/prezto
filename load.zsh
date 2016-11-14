@@ -16,7 +16,7 @@ function load_github() {
 	shift
 	fpath=("$ZROOT/plugins/github.com/$name" $fpath)
 	local files=($@)
-	if [[ $#files == 0 ]]; then
+	if [[ $#files == 0 ]] || [[ $files == "()" ]]; then
 		local default_file=$(basename $name).zsh
 		if [[ -f "$ZROOT/plugins/github.com/$name/$default_file" ]]; then
 			source "$ZROOT/plugins/github.com/$name/$default_file"

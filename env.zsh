@@ -20,6 +20,7 @@ path=(
 	"$HOME/.rvm/bin"
 	"$HOME/.rvm/rubies/ruby-2.3.0/bin/"
 	"/Library/Frameworks/Python.framework/Versions/3.5/bin"
+	"/Applications/calibre.app/Contents/console.app/Contents/MacOS"
 	$path
 )
 
@@ -29,4 +30,7 @@ fpath=(
 )
 
 compinit
+
+export GITHUB_TOKEN="****"
+export REACT_EDITOR=/Users/yazou/bin/vim
 

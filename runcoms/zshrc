@@ -8,6 +8,7 @@ source "$HOME/.zprezto/aliases.zsh"
 source "$HOME/.zprezto/env.zsh"
 source "$HOME/.zprezto/load.zsh"
 source "$HOME/.zprezto/dirconf.zsh"
+source "$HOME/.zprezto/git-extras-completion.zsh"
 
 load yazgazan/zsh-rgrep
 load yazgazan/zsh-ctrlp
@@ -16,5 +17,8 @@ load yazgazan/zsh-gi
 load yazgazan/zsh-attach
 load yazgazan/zsh-gulp
 load yazgazan/zsh-shortcut
+load yazgazan/zsh-d
+load yazgazan/zsh-git-hist
+load yazgazan/vpn-utils
 load rupa/z z.sh
 

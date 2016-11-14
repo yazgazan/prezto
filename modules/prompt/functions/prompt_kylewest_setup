@@ -16,6 +16,43 @@
 
 CROSS="✘"
 
+function ahead_behind {
+	local curr_branch=$(git rev-parse --abbrev-ref HEAD) &> /dev/null;
+	local curr_remote=$(git config branch.$curr_branch.remote) &> /dev/null;
+	if [[ "$curr_remote" = "" ]]; then
+		return 0
+	fi
+	local curr_merge_branch=$(git config branch.$curr_branch.merge | cut -d / -f 3) &> /dev/null;
+	local ahead_behind=$(git rev-list --left-right --count $curr_remote/$curr_merge_branch...$curr_branch)
+	local ahead=$(echo $ahead_behind | cut -f2)
+	local behind=$(echo $ahead_behind | cut -f1)
+	if [[ $ahead == 0 ]]; then
+		if [[ $behind != 0 ]]; then
+			echo "%{%F{red}%}$behind "
+		fi
+	elif [[ $behind == 0 ]]; then
+		if [[ $ahead != 0 ]]; then
+			echo "%{%F{green}%}$ahead "
+		fi
+	else
+		echo "%{%F{green}%}$ahead%{%F{reset}%}|%{%F{red}%}$behind "
+	fi
+}
+
+function behind {
+	local curr_branch=$1
+	local curr_remote=$2
+	local curr_merge_branch=$3
+	git rev-list --count $curr_branch...$curr_remote/$curr_merge_branch;
+}
+
+function ahead {
+	local curr_branch=$1
+	local curr_remote=$2
+	local curr_merge_branch=$3
+	git rev-list --left-right --count $curr_remote/$curr_merge_branch...$curr_branch | cut -f2;
+}
+
 function prompt_kylewest_precmd {
   RETVAL=$?
   setopt LOCAL_OPTIONS
@@ -63,7 +100,7 @@ function prompt_kylewest_setup {
   zstyle ':prezto:module:ruby:info:version' format '%F{blue}[%v]%f'
 
   # Define prompts.
-  PROMPT='${SYMBOLS}%F{cyan}%2~%f ${git_info:+${(e)git_info[prompt]}}${editor_info[keymap]} '
+  PROMPT='${SYMBOLS}%F{cyan}%2~%f ${git_info:+${(e)git_info[prompt]}}$(ahead_behind)${editor_info[keymap]} '
   RPROMPT='${ruby_info[version]}'
 }
 
